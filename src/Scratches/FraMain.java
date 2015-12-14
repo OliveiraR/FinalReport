@@ -1,6 +1,5 @@
 package Scratches;
 
-import Scratches.PanOut;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +15,6 @@ public class FraMain extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);
-        add(panOut, BorderLayout.CENTER);
-
+        add(panOut, BorderLayout.NORTH);
     }
 }

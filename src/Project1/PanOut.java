@@ -8,14 +8,10 @@ import javax.swing.JPanel;
 public class PanOut extends JPanel {
 
     ImageIcon imgHeader;
-//    JButton btnHeader;
     JLabel lblHeader;
     JLabel lblOutput;
 
     public PanOut() {
-        /*  lblHeader = new JLabel();
-         imgHeader = new ImageIcon("dogeheader.jpg");
-         lblHeader.setIcon(imgHeader);  */
         this.setBackground(Color.white);
         lblOutput = new JLabel("TIC TAC TOE"); //setFont line has to be after the Line with the words
         lblOutput.setFont(lblOutput.getFont().deriveFont(72.0f)); // Changes the size of font

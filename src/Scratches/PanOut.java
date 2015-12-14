@@ -1,5 +1,6 @@
 package Scratches;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -7,6 +8,7 @@ import javax.swing.JPanel;
 public class PanOut extends JPanel {
 
     JLabel lblOutput;
+    
 
     public PanOut() {
         lblOutput = new JLabel("TIC TAC TOE"); //setFont line has to be after the Line with the words
