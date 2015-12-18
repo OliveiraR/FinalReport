@@ -9,7 +9,6 @@ public class PanMain extends JPanel {
 
     BtnSquare arBtnSquares[] = new BtnSquare[9];
     String sIndex;
-    // private int i = 0;
 
     public PanMain() {
         setFocusable(true);
@@ -22,7 +21,6 @@ public class PanMain extends JPanel {
 
             arBtnSquares[i].addActionListener(click);
             sIndex = String.valueOf(i);
-            // arBtnSquares[i].setActionCommand(sIndex);
 
         }
     }
@@ -32,43 +30,15 @@ public class PanMain extends JPanel {
         int nCheck;
 
         public void actionPerformed(ActionEvent e) {
-            /*
-             for (int j = 0; j < arBtnSquares.length; j++) {
-             if (e.getSource() == arBtnSquares[i]) { //button[i] was clicked
-             if(arBtnSquares[i] == arBtnSquares[j]){//
-             arBtnSquares[i].setText("X");
-             }
-             }
-             }
-             * */
+
             for (int i = 0; i < arBtnSquares.length; i++) {
                 nCheck = 0;
-                // int nCheck = arBtnSquares[i];
-                //if (nCheck < arBtnSquares[i]) {
-                //if (arBtnSquares[i] > nCheck) {
-                if (i > nCheck) {
-                    nCheck = i;
+
+                if (e.getSource() == arBtnSquares[i]) { //arBtnSquares[i] was clicked
+                    nCheck = i;                         // Helped from http://stackoverflow.com/questions/13548299/how-do-i-tell-which-button-is-being-clicked-in-an-array-of-buttons
+                    arBtnSquares[i].setText("X");
                 }
-
-                //arBtnSquares[0].setText("X");
             }
-            arBtnSquares[nCheck].setText("X");
         }
-
-        /*   @Override
-         public void actionPerformed(ActionEvent e) {
-         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-         }*/
     }
 }
-        /*
-         *     public static int bigee(int arnNumb[], int nSize) {
-         int nBig = arnNumb[0];
-         for (int i = 1; i < nSize; i++) {
-         if (arnNumb[i] > nBig) {
-         nBig = arnNumb[i];
-         }
-         }
-         return nBig;
-         }
-         */
