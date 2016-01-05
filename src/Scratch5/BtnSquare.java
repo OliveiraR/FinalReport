@@ -10,11 +10,9 @@ class BtnSquare extends JButton {
 
     BtnSquare(int _nNum) {
         nNum = _nNum;
-
     }
 
     public int getNum() {
         return nNum;
     }
-
 }

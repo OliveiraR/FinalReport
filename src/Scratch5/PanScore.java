@@ -6,19 +6,24 @@ import javax.swing.*;
 public class PanScore extends JPanel // scoreboard
 {
 
-    private static JLabel lblScore;
+    private static JLabel lblScoreX, lblScoreO;
     int nScore;
     String sScore;
+    String sScoreX, sScoreO;
 
     public PanScore() {
-        lblScore = new JLabel("0");
-        add(lblScore);
+        lblScoreX = new JLabel("X - 0");
+        add(lblScoreX);
+        lblScoreO = new JLabel("O - 0");
+        add(lblScoreO);
         this.setBackground(Color.white); //Score panel colour
     }
 
-    public void UpdateScoreLabel(int _nScore) {
-        nScore = _nScore;
-        sScore = Integer.toString(nScore);
-        lblScore.setText(sScore);
+    public void UpdateScoreLabel(int nWinX, int nWinO) {
+        //nScore = _nScore;
+        sScoreX = Integer.toString(nWinX);
+        sScoreO = Integer.toString(nWinO);
+        lblScoreX.setText("X - " + sScoreX);
+        lblScoreO.setText("O - " + sScoreO);
     }
 }
