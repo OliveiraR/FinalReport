@@ -27,6 +27,8 @@ public class PanMain extends JPanel {
 
     public class Click implements ActionListener {
 
+        boolean bPlayerX = true;
+        //boolean bPlayerX = false;
         int nCheck;
         public int nStatus = -1;  //used to see whose turn it is
         //nStatus updates 1 button only
@@ -38,14 +40,44 @@ public class PanMain extends JPanel {
                 nCheck = 0;
                 arBtnSquares[i].setFont(arBtnSquares[i].getFont().deriveFont(72.0f));
                 if (arBtnSquares[i].isEnabled()) {
+
+//                    if (bPlayerX == true) {
+//                        bPlayerX = false;
+//                    }
+//                    if (bPlayerX == false) {
+//                        bPlayerX = true;
+//                    }
+
+                    //nStatus *= -1;
+                    //}
+                    if (e.getSource() == arBtnSquares[i]) { //arBtnSquares[i] was clicked
+
+                        if (bPlayerX == true) {
+                            bPlayerX = false;
+                            arBtnSquares[i].setText("X");
+                        } else { //(bPlayerX = false) {
+                            bPlayerX = true;
+                            arBtnSquares[i].setText("O");
+                        }//getsource
+
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+ *                 if (arBtnSquares[i].isEnabled()) {
                     nStatus *= -1;
                 }
                 if (e.getSource() == arBtnSquares[i]) { //arBtnSquares[i] was clicked
+
+
                     nCheck = i;                         // Helped from http://stackoverflow.com/questions/13548299/how-do-i-tell-which-button-is-being-clicked-in-an-array-of-buttons
-                    //nStatus *= -1;
                     if (nStatus == 1) { //if nStatus=1, X is shown on button
                         arBtnSquares[i].setText("X");
-                    } else if (nStatus == -1) { //if nStatus=-1, O is shown on button
+                    } //if (nStatus == -1) { //if nStatus=-1, O is shown on button
+                    if (nStatus != 1) {
                         arBtnSquares[i].setText("O");
                     }
                 }
@@ -53,3 +85,5 @@ public class PanMain extends JPanel {
         }
     }
 }
+
+ */

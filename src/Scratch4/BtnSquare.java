@@ -24,9 +24,9 @@ class BtnSquare extends JButton{
         * */
         
        
-        
+            
+
     }
-    
     public int getNum(){
         return nNum;
     }

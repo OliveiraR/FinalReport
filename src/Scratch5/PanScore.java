@@ -10,6 +10,7 @@ public class PanScore extends JPanel // scoreboard
     int nScore;
     String sScore;
     String sScoreX, sScoreO;
+    private int nScoreX, nScoreO;
 
     public PanScore() {
         lblScoreX = new JLabel("X - 0");
@@ -21,8 +22,10 @@ public class PanScore extends JPanel // scoreboard
 
     public void UpdateScoreLabel(int nWinX, int nWinO) {
         //nScore = _nScore;
-        sScoreX = Integer.toString(nWinX);
-        sScoreO = Integer.toString(nWinO);
+        nScoreX = nWinX;
+        nScoreO = nWinO;
+        sScoreX = Integer.toString(nScoreX);
+        sScoreO = Integer.toString(nScoreO);
         lblScoreX.setText("X - " + sScoreX);
         lblScoreO.setText("O - " + sScoreO);
     }

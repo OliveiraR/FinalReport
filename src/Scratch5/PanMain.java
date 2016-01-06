@@ -26,8 +26,8 @@ public class PanMain extends JPanel {
 
         int nCheck;
         public int nStatus = -1;  //used to see whose turn it is
-        public int nWinX = 0, nWinO = 0;
-        public int nButtons = 0;
+        public int nWinX, nWinO;
+        //public int nButtons = 0;
         public int nBigX, nBigO;
         //nStatus updates 1 button only
         //Starts at -1 since it *-1 each time to get next peice, this will make x go first
@@ -81,11 +81,11 @@ public class PanMain extends JPanel {
                     nWinO++;
                 }
                 if (arBtnSquares[0].getText().matches(sX) && arBtnSquares[4].getText().matches(sX) && arBtnSquares[8].getText().matches(sX)) {
-                    //Checks if X is in square 1,4,9
+                    //Checks if X is in square 1,5,9
                     nWinX++;
                 }
                 if (arBtnSquares[0].getText().matches(sO) && arBtnSquares[4].getText().matches(sO) && arBtnSquares[8].getText().matches(sO)) {
-                    //Checks if 0 is in square 1,4,9
+                    //Checks if 0 is in square 1,5,9
                     nWinO++;
                 }
                 if (arBtnSquares[2].getText().matches(sX) && arBtnSquares[4].getText().matches(sX) && arBtnSquares[6].getText().matches(sX)) {
@@ -96,16 +96,15 @@ public class PanMain extends JPanel {
                     //Checks if 0 is in square 3,5,7
                     nWinO++;
                 }
-                if (nWinX > nBigX) {
-                    arBtnSquares[i].setText("");
+                for (int j = 0; j < 9; j++) {
+                    if (nWinX > nBigX) {
+                        arBtnSquares[j].setText(""); //reset board
+                    }
+                    if (nWinO > nBigO) {
+                        arBtnSquares[j].setText(""); //reset board
+                    }
                 }
-                if (nWinO > nBigO) {
-                    arBtnSquares[i].setText("");
-                }
-                nBigX = Biggest(nWinX, nWinO);
-
-//To set text blank create nBig for X and O
-// if (X>nBig){ arBtnSquares[i].setText("");
+                nBigX = Biggest(nWinX, nWinO); //Check if the board needs to be reset because of a win
             }
             panScore.UpdateScoreLabel(nWinX, nWinO);
         }
@@ -114,6 +113,7 @@ public class PanMain extends JPanel {
     public static int Biggest(int nWinX, int nWinO) {
         int nBigX = nWinX;
         int nBigO = nWinO;
+
         if (nWinX > nBigX) {
             nBigX = nWinX;
         }
